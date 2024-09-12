@@ -14,8 +14,8 @@ import { ThemeProvider } from "styled-components";
 
 const App = () => {
   const userContext = useContext(UserContext);
-  // const isAuthenticated = userContext?.user !== null;
-  const isAuthenticated = true;
+  const isAuthenticated = userContext?.user !== null;
+  // const isAuthenticated = true;
 
   return (
     <Router>

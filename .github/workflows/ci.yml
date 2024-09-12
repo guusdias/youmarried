@@ -57,3 +57,15 @@ jobs:
       #   run: vercel --prod
       #   env:
       #     VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t my-react-app .
+
+      - name: Run Docker container
+        run: docker run -p 3000:80 my-react-app
